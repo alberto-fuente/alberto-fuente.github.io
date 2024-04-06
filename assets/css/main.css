@@ -2134,7 +2134,12 @@ input, select, textarea {
 			}
 
 		.image.avatar {
-			border-radius: 100%;
+			/*border-radius: 100%;*/
+			width: 100px;
+			height: 100px;
+			position: relative;
+			overflow: hidden;
+			border-radius: 50%;
 		}
 
 			.image.avatar:before {
@@ -2142,8 +2147,12 @@ input, select, textarea {
 			}
 
 			.image.avatar img {
-				border-radius: 100%;
-				width: 100%;
+				/*border-radius: 100%;
+				width: 100%;*/
+				display: inline;
+				margin: 0 auto;
+				height: 100%;
+				width: auto;
 			}
 
 /* List */
@@ -2593,7 +2602,7 @@ input, select, textarea {
 		justify-content: space-between;
 		background-color: #1f1815;
 		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+		background-image: url("images/overlay.png"), url("../../images/bg.jpeg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								150%;
