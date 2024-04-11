@@ -11,7 +11,7 @@ html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
+small, strike, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
 form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
@@ -22,7 +22,7 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/*font: inherit;*/ 
 	vertical-align: baseline;
 }
 
@@ -101,8 +101,9 @@ body {
 
 body, input, select, textarea {
 	color: #a2a2a2;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
-	/*font-family: "Dosis", sans-serif;*/
+	/*font-family: "Source Sans Pro", Helvetica, sans-serif;*/
+
+	font-family: "Dosis", sans-serif;
 	font-size: 16pt;
 	font-weight: 400;
 	line-height: 1.75em;
@@ -126,7 +127,7 @@ a {
 
 strong, b {
 	/*color: #787878;*/
-	font-weight: 400;
+	font-weight: 600;
 }
 
 em, i {
@@ -145,11 +146,14 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 1em 0;
 }
 
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-		color: inherit;
+	h1 a, h2 a, h3 a, h4, h5 a, h6 a {
+		color: #0f787b;
 		text-decoration: none;
 	}
-
+a {
+	color: lightseagreen;
+	font-weight:500;
+}
 h1 {
 	font-size: 2em;
 	line-height: 1.5em;
@@ -1762,13 +1766,13 @@ section.special, article.special {
 }
 
 header p {
-	color: #b2b2b2;
+	color: #0d5b65;
 	position: relative;
 	margin: 0 0 1.5em 0;
 }
 
 header h2 + p {
-	font-size: 1.25em;
+	font-size: 1em;
 	margin-top: -1em;
 	line-height: 1.5em;
 }
@@ -2052,12 +2056,15 @@ input[type="radio"] {
 		display: block;
 		height: 100%;
 		left: 0;
-		opacity: 0.25;
+		opacity: 0.2;
 		position: absolute;
 		top: 0;
 		width: 100%;
 	}
-
+.ima:after {
+	transition: transform 0.3s ease;
+	opacity: 0;
+}
 	.image.thumb {
 		text-align: center;
 	}
@@ -2068,11 +2075,11 @@ input[type="radio"] {
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
 			border-radius: 0.35em;
-			border: solid 3px rgba(255, 255, 255, 0.5);
+			border: solid 3px rgba(255, 255, 255, .9);
 			color: #fff;
 			content: 'View';
 			display: inline-block;
-			font-size: 0.8em;
+			font-size: .8em;
 			font-weight: 400;
 			left: 50%;
 			line-height: 2.25em;
@@ -2084,15 +2091,21 @@ input[type="radio"] {
 			text-decoration: none;
 			top: 50%;
 			white-space: nowrap;
+			background-color: rgba(15, 120, 123, .5);
+			transition: transform 0.3s ease;
+			transform: scale(1);
 		}
 
 		.image.thumb:hover:after {
-			opacity: 1.0;
+			opacity: 1;
+
+			transition: transform 0.3s ease;
+			transform: scale(1.2);
 		}
 
 		.image.thumb:hover:before {
 			background: url("images/overlay.png"), url("images/overlay.png");
-			opacity: 1.0;
+			opacity: 1;
 		}
 
 	.image img {
@@ -2578,6 +2591,13 @@ input[type="button"],
 		margin: 0;
 	}
 
+	.work-item img {
+		transition: transform 0.3s ease; /* Transición suave */
+	}
+
+	.work-item:hover img {
+		transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+	}
 /* Header */
 
 #header {
@@ -2660,7 +2680,7 @@ input[type="button"],
 	}
 
 #footer .copyright {
-	color: rgba(255, 255, 255, 0.4);
+	color: rgba(255, 255, 255, .4);
 	font-size: 0.8em;
 	list-style: none;
 	margin: 1em 0 0 0;
@@ -2778,7 +2798,7 @@ input[type="button"],
 	-ms-box-sizing: content-box;
 	box-sizing: content-box;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	background: #fff;
+	background: #fff;/*rgba(15, 120, 123, 0.7);*/
 	border-radius: 0.35em;
 	box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
 	overflow: hidden;
@@ -2812,6 +2832,7 @@ input[type="button"],
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
+			color:rgba(4, 55, 56,1);
 		}
 
 		.poptrox-popup .loader:before {
@@ -2831,9 +2852,7 @@ input[type="button"],
 		width: 100%;
 		z-index: 1;
 	}
-
-	.poptrox-popup .nav-next,
-	.poptrox-popup .nav-previous {
+		.poptrox-popup .nav-next, .poptrox-popup .nav-previous {
 		text-decoration: none;
 		-moz-transition: opacity 0.2s ease-in-out;
 		-webkit-transition: opacity 0.2s ease-in-out;
@@ -3141,8 +3160,9 @@ body.is-touch .poptrox-popup .closer {
 
 	section.special, article.special {
 		text-align: center;
+		transition: transform 0.3s ease;
+		transform: scale(1.1);
 	}
-
 	header.major h2 {
 		font-size: 1.35em;
 	}
@@ -3218,6 +3238,6 @@ body.is-touch .poptrox-popup .closer {
 		line-height: 2.25em;
 		margin-left: 0;
 		padding-left: 0;
-		color: #87b9bb;
+		color: #fff;
 	}
 }
