@@ -3002,7 +3002,7 @@ input[type="button"],
 		text-align: center;
 		top: 0;
 		width: 4em;
-		z-index: 2;
+		z-index: 1000;
 	}
 
 		.poptrox-popup .closer:before {
@@ -3049,6 +3049,7 @@ input[type="button"],
 
 	.poptrox-popup:hover .closer {
 		opacity: 0.5;
+
 	}
 
 		.poptrox-popup:hover .closer:hover {
